@@ -43,6 +43,11 @@ jobs:
         run: >
           anypoint-cli-v4 runtime-mgr:application:describe f5837557-0c82-408a-a16b-9fe866260ed9 --environment Sandbox
 
+      - name: Lists of all assets AsyncAPIs
+        run: >
+          anypoint-cli-v4 exchange:asset:list --type AsyncAPIs
+      
+
       
         
      
