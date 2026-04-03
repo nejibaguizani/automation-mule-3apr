@@ -45,7 +45,7 @@ jobs:
 
       - name: Lists of all assets AsyncAPIs
         run: >
-          anypoint-cli-v4 exchange:asset:list --type AsyncAPIs
+          anypoint-cli-v4 exchange:asset:list --organizationId f8ab9797-5cce-4c5b-9eac-417c579ed4ba
       
 
       
