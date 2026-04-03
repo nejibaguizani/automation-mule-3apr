@@ -41,7 +41,7 @@ jobs:
 
       - name: Get metadata
         run: >
-          anypoint-cli-v4 runtime-mgr:application:describe f5837557-0c82-408a-a16b-9fe866260ed9
+          anypoint-cli-v4 runtime-mgr:application:describe f5837557-0c82-408a-a16b-9fe866260ed9 --environment Sandbox
 
       
         
