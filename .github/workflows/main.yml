@@ -1,0 +1,36 @@
+name: Anypoint CLI Automation
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  cli:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      
+      - name: Install Anypoint CLI
+        run: npm install -g anypoint-cli-v4
+        
+      - name: Print Account Details
+        run: >
+          anypoint-cli-v4 account:user:describe 
+          --client_id 1ed134b0a68548d79db4db72280e8d2f
+          --client_secret c23340F4a66b45e4B046691754Ca685C
+          --organization f8ab9797-5cce-4c5b-9eac-417c579ed4ba
+          --environment Sandbox
+          -o json
